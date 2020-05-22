@@ -1,0 +1,85 @@
+body{
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.nav-cont{
+  width: 100%;
+  height: 10vh;
+  background: #e7008a;
+}
+
+.login-cont{
+  position: absolute;
+  width: 400px;
+  height: auto;
+  background: #222021;
+  left: 50%;
+  top: 0;
+  margin-top: 100px;
+  transform: translateX(-50%);
+}
+
+.login-cont img{
+  position: relative;
+  width: 120px;
+  border: 7px solid #222021;
+  border-radius: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -60px;
+}
+
+.login-cont h1{
+  position: relative;
+  margin-top: 0;
+  text-align: center;
+  top: -50px;
+  color: white;
+}
+
+.login-form{
+  width: 100%;
+  height: auto;
+}
+
+.login-form input{
+  position: relative;
+  width: 80%;
+  height: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  border: none;
+  border-left: 5px solid #e7008a;
+  font-size: larger;
+  padding-left: 10px;
+}
+
+.login-form input:placeholder{
+  font-size: larger;
+}
+
+.login-form button{
+  position: relative;
+  width: 50%;
+  height: 50px;
+  font-size: larger;
+  font-weight: bold;
+  border: 4px solid #e7008a;
+  background: none;
+  border-radius: 10px;
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  transition: 0.3s ease-in-out;
+}
+
+.login-form button:hover{
+  color: black;
+  background: #e7008a;
+  transition: 0.3s ease-in-out;
+}
