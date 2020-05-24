@@ -17,7 +17,7 @@ render(){
 <div className="login-cont">
 <img src={User} alt="Login Photo" />
 <h1>Welcome</h1>
-<form className="login-form" action="/login" method="GET">
+<form className="login-form" action="/login" method="POST">
 <input type="text" name="User" placeholder="User Name" />
 <input type="password" name="Password" placeholder="Password" />
 <button type="submit">Login</button>

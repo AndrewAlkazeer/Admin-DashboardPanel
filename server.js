@@ -22,7 +22,7 @@ app.get('*', (req, res) => {
   
 })
 */
-app.get('/login', (req, res)=>{
+app.post('/login', (req, res)=>{
    
   var user = req.body.User;
   var pass = req.body.Password;
