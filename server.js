@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors());
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -27,7 +28,7 @@ app.get('/login', (req, res)=>{
   var pass = req.body.Password;
   console.log('user + pass');
   console.log(user + pass);
-
+  res.json({User: user, Pass: pass});
 });
 
 
