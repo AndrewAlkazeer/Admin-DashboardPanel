@@ -14,15 +14,20 @@ app.use(bodyParser.json());
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, 'app/build')))
 // Anything that doesn't match the above, send back index.html
+/*
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/app/build/index.html'))
+  res.sendFile(path.join(__dirname + '/app/public/index.html'))
+  console.log('main path');
+  
 })
-
+*/
 app.get('/login', (req, res)=>{
-    var user = req.body.User;
-    var pass = req.body.Password;
-    console.log(`Name: ${user}, Pass: ${pass}`)
-res.send('connected!');
+   
+  var user = req.body.User;
+  var pass = req.body.Password;
+  console.log('user + pass');
+  console.log(user + pass);
+
 });
 
 
