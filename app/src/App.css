@@ -91,7 +91,10 @@ body{
   margin-bottom: 40px;
   transition: 0.3s ease-in-out;
   font-family: 'Poppins', sans-serif;
+}
 
+.login-form button:focus{
+  border: none;
 }
 
 .login-form button .login-btn-div-1{
@@ -116,7 +119,6 @@ body{
 }
 
 .login-form button:hover .login-btn-div-1{
-
   height: 100%;
   transition: 0.2s ease-in-out;
 }

@@ -7,9 +7,9 @@ const env = require('dotenv').config();
 const port = process.env.PORT || 5000;
 const Mongo = require('mongodb').MongoClient;
 const assert = require('assert');
-const client = new Mongo(process.env.URI, { useNewUrlParser: true });
+const client = new Mongo(process.env.URI, { useNewUrlParser: true }, { useUnifiedTopology: true });
 app.use(cors());
-app.use(bodyParser.urlencoded());
+//app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -25,34 +25,32 @@ app.get('*', (req, res) => {
   
 })
 */
-
-
+var temp;
+var resultArray = [];
 app.post('/login', (req, res)=>{
-  
+
   client.connect(err =>{
     if(err) throw err;
-    var resultArray = [];
+    
     const db = client.db("registeredUser");
     var cursor = db.collection('userinfos').find();
-
-    function iterateFunc(doc) {
-     // console.log(JSON.stringify(doc, null, 4)); // I can see the data HERE! but cant be pushed to an array!
-    //  resultArray.push(doc);
-   }
-   
-   function errorFunc(error) {
-      console.log(error);
-   }
-   
-   cursor.forEach(iterateFunc, errorFunc);
-    resultArray.push(cursor);
-    console.log(resultArray);
-  client.close();
+    
+    cursor.forEach(function(doc){
+      resultArray.push(doc);
+    }, function(){
+      client.close();
+    })
+  
   });
   var user = req.body.User;
   var pass = req.body.Password;
- // res.json(cursor);
-  res.json({User: user, Pass: pass});
+  for(var i = 0; i < resultArray.length; i++){
+    if(user == resultArray[i].Username && pass == resultArray[i].Password){
+      console.log('User Found Successfully!, ' + 'Welcome to you Mr. ' + resultArray[i].Username);
+    } else{
+      console.log('User is Not Found!');
+    }
+  }
 });
 
 app.listen(port, ()=>{
