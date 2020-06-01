@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import logo from './logo.svg';
 import './App.css';
-import Wave from './Imgs/wave.svg';
+// import Wave from './Imgs/wave.svg';
 import User from './Imgs/user.svg';
 import Code from './Imgs/code.jpeg';
+import Home from './home.js';
+
 class App extends React.Component{
 constructor(props){
   super(props);
 }
 render(){
   return(
-<React.Fragment>
+    <Router>
+    <React.Fragment>
+    <div className="home-page-cont">
+    <Route path="/home">
+            <Home />
+       </Route>
+       </div>
 <div className="nav-cont">
 </div>
 <img className="bg-img" src={Code} alt="background image" />
@@ -25,8 +34,11 @@ render(){
 <div className="login-btn-div-2"></div>
 </button>
 </form>
+<Link to="/home">Home</Link>
 </div>
+
 </React.Fragment>
+</Router>
   );
 }
 }

@@ -43,7 +43,6 @@ var resultArray = [];
 app.post('/login', (req, res)=>{
 var userFound = false;
 
-  
   var user = req.body.User;
   var pass = req.body.Password;
   for(var i = 0; i < resultArray.length; i++){
@@ -54,10 +53,15 @@ var userFound = false;
     }
   }
 if(userFound){
-res.send(`Welcome to you Mr. ${userName}, you will be redirected momentarily!`);
+// return res.send(`Welcome to you Mr. ${userName}, you will be redirected momentarily!`);
+// return res.redirect('/home');
 } else if(!userFound){
   res.send('User is Not Found!');
 }
+});
+
+app.get('/home', ()=>{
+  res.send('You are in home page');
 });
 
 app.listen(port, ()=>{
