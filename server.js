@@ -54,7 +54,7 @@ var userFound = false;
   }
 if(userFound){
 // return res.send(`Welcome to you Mr. ${userName}, you will be redirected momentarily!`);
-// return res.redirect('/home');
+res.redirect('/home');
 } else if(!userFound){
   res.send('User is Not Found!');
 }

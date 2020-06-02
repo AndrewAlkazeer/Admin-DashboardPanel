@@ -15,13 +15,11 @@ render(){
   return(
     <Router>
     <React.Fragment>
-    <div className="home-page-cont">
+
     <Route path="/home">
             <Home />
        </Route>
-       </div>
-<div className="nav-cont">
-</div>
+    
 <img className="bg-img" src={Code} alt="background image" />
 <div className="login-cont">
 <img src={User} alt="Login Photo" />
