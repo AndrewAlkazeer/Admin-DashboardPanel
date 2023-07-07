@@ -33,5 +33,8 @@
     "node-modules": "^1.0.1",
     "nodemon": "^2.0.4",
     "path": "^0.12.7"
-  }
+  },
+  "engines": {
+    "mongodb": "3.5.7"
+   }
 }
